@@ -19,6 +19,8 @@ class PostController extends Controller
         // $posts = Post::orderBy('created_at', 'desc')->get();
         $posts = Post::latest()->paginate(20);
 
+        // dd($posts);
+
         return view('posts.index', [
             'posts' => $posts
         ]);
